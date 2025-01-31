@@ -1,21 +1,29 @@
 <script>
-	let { children } = $props();
+	import { page } from '$app/state';
+
+	let { children, data } = $props();
 </script>
 
 <div class="app">
 	<header>
 		<div class="left-section">
-			<img class="profile-icon" alt="ikona profila" src="$lib/assets/profile-icon.svg" />
-			<nav>
-				<a class="home" href="/home">Kalendar</a>
-				<a class="students" href="/students">Kandidati</a>
-				<a class="profile" href="/profile">Profil</a>
-			</nav>
+			{#if page.route.id.includes('/(app)/(user)')}
+				<img
+					class="profile-icon"
+					alt="ikona profila"
+					src="$lib/assets/profile-icon.svg"
+				/>
+				<nav>
+					<a class="home" href="/home">Kalendar</a>
+					{#if data?.user?.role === 'instructor'}
+						<a class="students" href="/students">Kandidati</a>
+					{/if}
+					<a class="profile" href="/profile">Profil</a>
+				</nav>
+			{/if}
 		</div>
 
-		<div class="right-section">
-			<!-- logo -->
-		</div>
+		<div class="right-section">LOGO</div>
 	</header>
 
 	<main>
@@ -42,6 +50,7 @@
 		@import '$lib/styles/base.css';
 		@import '$lib/styles/normalize.css';
 		@import '$lib/styles/typography.css';
+		@import '$lib/styles/utils.css';
 	}
 
 	/* od tu pisati stilove za elemente na ovom layoutu */
