@@ -11,6 +11,7 @@
 	}
 </script>
 
+<h1>Login</h1>
 <form onsubmit={handleSubmit}>
 	<div>
 		<label for="">email</label>

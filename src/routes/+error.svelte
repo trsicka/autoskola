@@ -3,13 +3,17 @@
 	import { page } from '$app/state';
 </script>
 
-<div>{page.error?.message}</div>
 {#if page.status === 401}
+	<h1>Unauthorized</h1>
+	<div>{page.error?.message}</div>
 	<button
 		onclick={() => {
 			goto('/login');
 		}}
 	>
-		Try to login again!
+		Login
 	</button>
+{:else}
+	<h1>Error</h1>
+	<div>{page.error?.message}</div>
 {/if}

@@ -63,6 +63,12 @@
 	.calendar--container {
 		height: 100%;
 		width: 100%;
+
+		:global {
+			.ec-event {
+				font-size: 0.4em;
+			}
+		}
 	}
 
 	.timeline--container {

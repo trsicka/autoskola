@@ -1,13 +1,11 @@
 <script>
-	import { page } from '$app/state';
-
 	let { children, data } = $props();
 </script>
 
 <div class="app">
 	<header>
 		<div class="left-section">
-			{#if page.route.id.includes('/(app)/(user)')}
+			{#if data.user}
 				<img
 					class="profile-icon"
 					alt="ikona profila"
@@ -15,7 +13,7 @@
 				/>
 				<nav>
 					<a class="home" href="/home">Kalendar</a>
-					{#if data?.user?.role === 'instructor'}
+					{#if data.user.role === 'instructor'}
 						<a class="students" href="/students">Kandidati</a>
 					{/if}
 					<a class="profile" href="/profile">Profil</a>

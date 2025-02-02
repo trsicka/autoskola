@@ -75,16 +75,6 @@
 		width: 100%;
 	}
 
-	.search-bar {
-		height: 54px;
-		width: 332px;
-		font-size: 24px;
-		background-color: rgba(224, 224, 224, 1);
-		border-radius: 10px;
-		border-color: white;
-		padding: 16px;
-	}
-
 	.left-section {
 		font-size: 34px;
 	}
